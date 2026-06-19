@@ -1,16 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1 id = "head">BEM-VINDOS AO QUIZ</h1>
-<div id = "container">
-    <div id = "respostas"></div>    
-</div>
-</body>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--tel#fffffficial-->
+    <div id="container">
+      <h1 id="head">BEM-VINDOS AO QUIZ</h1>
+      <div class="niveis">
+        <label class="nivel">
+          <input type="radio" name="nivel" value="facil" />
+          <span>Fácil (5 perguntas)</span>
+        </label>
+        <label class="nivel">
+          <input type="radio" name="nivel" value="medio" />
+          <span>medio (10 perguntas)</span>
+        </label>
+        <label class="nivel">
+          <input type="radio" name="nivel" value="dificil" />
+          <span>dificil (15 perguntas)</span>
+        </label>
+      </div>
+
+      <button onclick="IniciarQuiz()" class="butao"><span>Prosseguir</span></button>
+    </div>
+  </body>
 </html>
