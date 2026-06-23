@@ -338,6 +338,6 @@ function mostrarResultado() {
 
         <button onclick="location.reload()">
             Jogar Novamente
-        </button>
+        </button> 
     `;
 }
