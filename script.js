@@ -2,32 +2,32 @@ const perguntas = {
   facil: [
     {
       pergunta: "Qual é o nome do planeta onde ocorre Avatar?",
+      imagem: "https://i.pinimg.com/736x/5a/64/2a/5a642a06dc4036b97596f9e279aff6cf.jpg",
       opcoes: ["Pandora", "Terra", "Marte", "Titan"],
       correta: 0,
     },
     {
       pergunta: "Quem dirigiu Avatar?",
-      opcoes: [
-        "Steven Spielberg",
-        "James Cameron",
-          "Christopher Nolan",
-        
-        "Ridley Scott",
-      ],
+      imagem: "https://i.pinimg.com/1200x/58/47/6d/58476dfb93bd2ea37bfd2f46ce52a40a.jpg",
+      opcoes: ["Steven Spielberg", "James Cameron", "Christopher Nolan", "Ridley Scott",],
       correta: 1,
     },
+
     {
       pergunta: "Qual é a raça nativa de Pandora?",
+      imagem: "https://i.pinimg.com/1200x/f0/dd/56/f0dd561da9d005832b5160ff6c7c9f7e.jpg",
       opcoes: ["Navi", "Na'vi", "Kree", "Asgardianos"],
       correta: 1,
     },
     {
       pergunta: "Qual é o nome do protagonista?",
+      imagem: "https://i.pinimg.com/1200x/99/78/27/997827c4afcab62fcb180f783d47ef70.jpg",
       opcoes: ["Jake Sully", "Miles Quaritch", "Norm Spellman", "Tsu'tey"],
       correta: 0,
     },
     {
       pergunta: "Qual a cor predominante dos Na'vi?",
+      imagem: "https://i.pinimg.com/1200x/a8/5a/1c/a85a1c75260049bd20819681ff7b4d88.jpg",
       opcoes: ["Verde", "Azul", "Vermelho", "Roxo"],
       correta: 1,
     },
@@ -271,8 +271,8 @@ function mostrarPergunta() {
   const perguntaAtual = perguntasAtuais[indiceAtual];
 
   container.innerHTML = `
-        <h1>${perguntaAtual.pergunta}</h1>
-
+        <h1 id= "pergunta">${perguntaAtual.pergunta}</h1>
+          <img id= "img" src= "${perguntaAtual.imagem}">
         <div class="opcoes">
             ${perguntaAtual.opcoes
               .map(
@@ -336,7 +336,7 @@ function mostrarResultado() {
 
         <p>${mensagem}</p>
 
-        <button onclick="location.reload()">
+        <button class="butao" onclick="location.reload()">
             Jogar Novamente
         </button> 
     `;

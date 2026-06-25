@@ -5,29 +5,49 @@
 
 
 }
+
 #head{
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 50px;
     font-family: 'Exo 2', sans-serif;
     color: #E2E8F0;
 }
+
+#titulo {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color:#E2E8F0; 
+}
+
+#sub {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #E2E8F0;
+}
+
 body{
+     background-image: url("https://i.pinimg.com/1200x/a5/64/f4/a564f465ddf4063c43d994e479c3a793.jpg");
+     background-size: cover; /* Faz a imagem cobrir todo o espaço disponível */
+     background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
     min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #030712;
 }
+
 .niveis{
     display: flex;
     flex-direction: column;
     align-self: center;
     gap: 15px;
-    
-    margin: 20px 0;
-    transform: translateX(-30px);
+    margin: 10px 0;
 }
+
 .nivel{
     font-size: 30px;
     border: 2px solid #ccc;
@@ -36,19 +56,23 @@ body{
     box-sizing: border-box;
     color: #E2E8F0;
 }
+
 .nivel input{
     display: none;
 }
+
 .nivel:hover{
     background-color:#752db9;
     border-color: white;
 }
+
 .nivel:has(input:checked){
     background-color: rgb(68, 22, 128);
     color: #E2E8F0;
     border-color: white;
 
 }
+
 .butao{
     border: 2px solid #ccc;
     box-sizing: border-box;
@@ -61,19 +85,29 @@ body{
     align-self: flex-end;
 
 }
+
 .butao:hover{
     background-color: #752db9;
     border-color:white ;
 }
 
 #container{
-    display: flex;
-    flex-direction: column;
-    background-color:#081C3A ;
+    display: flex; /* torna um container flexivel e alinha os elementos dentro dele */
+    flex-direction: column; /* direção em que os elementos vão ser alinhados */
+    background-color:rgb(8, 28, 58, 0.9);
     padding: 40px;
-    width: 75svw;
+    width: 75svw; 
     height: 75svh;
     border-radius: 100px;
     box-shadow:4px 7px 10px #752db9 ;
+}
 
+#pergunta{
+    font-size: 30px;
+    text-align: center;
+}
+#img{
+    height: 20svh;
+    width: 20svw;
+    object-fit: cover;
 }
