@@ -254,7 +254,7 @@ function mostrarPergunta() {
                 (opcao, indice) => `
                 <button
                     class="opcao"
-                    onclick="responder(${indice})">
+                    onclick="responder(${indice}, this)">
                     ${opcao}
                 </button>
             `
@@ -269,20 +269,32 @@ function mostrarPergunta() {
     `;
 }
 
-function responder(indiceEscolhido) {
+function responder(indiceEscolhido, botaoClicado) {
   const correta = perguntasAtuais[indiceAtual].correta;
 
+  // desabilitar todos os botões de opção
+  const botoes = document.querySelectorAll(".opcao"); 
+  botoes.forEach((botao) => {
+    botao.disabled = true;
+  });
+
+
   if (indiceEscolhido === correta) {
+    botaoClicado.style.backgroundColor = "green";
     pontos++;
-  }
+  }else {
+    botaoClicado.style.backgroundColor = "red";
 
-  indiceAtual++;
-
-  if (indiceAtual < perguntasAtuais.length) {
-    mostrarPergunta();
-  } else {
-    mostrarResultado();
+    botoes[correta].style.backgroundColor = "green"; // deixa a resposta correta verde
   }
+  setTimeout(() => {
+    indiceAtual++; 
+    if (indiceAtual < perguntasAtuais.length) {
+      mostrarPergunta();
+    } else {
+      mostrarResultado();
+    }
+  }, 1000);// espera 1 segundo antes de mostrar a próxima pergunta ou resultado
 }
 
 function mostrarResultado() {
