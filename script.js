@@ -231,6 +231,8 @@ function IniciarQuiz() {
 
   perguntasAtuais = perguntas[nivelEscolhido];
 
+  perguntasAtuais.sort(() => Math.random() - 0.5); /* embaralhar perguntas*/
+
   indiceAtual = 0;
   pontos = 0;
 
@@ -291,23 +293,27 @@ function mostrarResultado() {
   let mensagem = "";
 
   if (porcentagem === 100) {
+    imagem = "https://i.pinimg.com/originals/13/d4/de/13d4de64e73e78ec458aed8231768293.gif"; 
     mensagem = "Você é um verdadeiro Na'vi!";
   } else if (porcentagem >= 70) {
+    imagem = "https://i.pinimg.com/originals/b2/75/81/b27581acb400adb873c47e6971a61cc6.gif";
     mensagem = "Ótimo conhecimento sobre Avatar!";
   } else if (porcentagem >= 50) {
+    imagem = "https://i.pinimg.com/originals/dc/09/75/dc09758f8e8bc92138455d0f2492133f.gif";
     mensagem = "Bom trabalho!";
   } else {
+    imagem ="https://i.pinimg.com/originals/22/d7/db/22d7db8597df6f74d1d0047658507133.gif";
     mensagem = "Hora de rever os filmes!";
   }
 
   container.innerHTML = `
-        <h1>Quiz Finalizado</h1>
+        <h1 id="qf">Quiz Finalizado</h1>
 
-        <h2>${pontos}/${perguntasAtuais.length}</h2>
+        <h2 id="pontuacao">Você acertou ${pontos}/${perguntasAtuais.length}</h2>
 
-        <h2>${porcentagem}%</h2>
-
-        <p>${mensagem}</p>
+        <h2 id="porc">${porcentagem}%</h2>
+        <img id="if" src=${imagem}>
+        <p id="msg">${mensagem}</p>
 
         <button class="butao" onclick="location.reload()">
             Jogar Novamente
